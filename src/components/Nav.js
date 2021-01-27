@@ -6,7 +6,7 @@ class Nav extends Component {
       <div className="container mx-auto bg-gray-800 text-white p-5">
         <nav className="flex justify-between">
             <a className="uppercase tracking-widest" href="/">Image Filter</a>
-            <a className="px-2 py-1 border border-4 border-gray-100" href="#">Github</a>
+            <a className="px-2 py-1 border border-4 border-gray-100" href="https://github.com/piyushsinha24/Image-Filter">Github</a>
         </nav>
       </div>
     );
