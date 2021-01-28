@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Image Editor using CamanJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img width="640" src="image-filter.gif"></img>
+</p>
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Before we can start using different features of the library, we will have to include it in our project. This can be done either by downloading the library or linking directly to a CDN.
 
-### `npm start`
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha512-JjFeUD2H//RHt+DjVf1BTuy1X5ZPtMl0svQ3RopX641DWoSilJ89LsFGq4Sw/6BSBfULqUW/CfnVopV5CfvRXA==" crossorigin="anonymous"></script>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Basics
 
-### `npm test`
+There are two ways to use the library:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Using the `data-caman` attribute with our image elements. This attribute can accept a combination of different CamanJS filters as its value.
 
-### `npm run build`
+```javascript
+  <img src="path/to/image.jpg"
+    data-caman="brightness(10) contrast(30) sepia(60) saturation(-30)">
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Calling `Caman()` with the id of the `canvas` where we have rendered the image and different filters that we want to apply to the rendered image. This method assumes we already have a canvas element in the page, and we would like to load an image via URL into the canvas for editing with CamanJS. We can also give DOM objects instead of Strings if we prefer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+  Caman("#canvas-id", "path/to/image.jpg", function () {
+    this.brightness(10);
+    this.contrast(30);
+    this.sepia(60);
+    this.saturation(-30);
+    this.render();
+  });
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot 2021-01-27 at 10.36.43 PM.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1611767250695/FtCIrN2pM.png)
+- Read the article to learn more: [Image Editor using CamanJS](https://piyushsinha.tech/image-editor-using-camanjs)
